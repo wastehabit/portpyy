@@ -65,62 +65,82 @@
             scroll-padding-top: 80px;
         }
 
-        /* Navigation */
-        .navbar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            width: 100%;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            z-index: 9999;
-            border-bottom: 1px solid #E5E7EB;
-            transition: all 0.3s ease;
-        }
+        /* Navigation - Pyyne Style */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    z-index: 1000;
+    padding: 2rem 0;
+    height: 100px;
+    display: flex;
+    align-items: center;
+}
 
-        .navbar-brand {
-            font-family: 'Protokoll', 'Inter', sans-serif;
-            font-size: 16px;
-            font-weight: 300;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: var(--primary-text);
-        }
+.navbar-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
 
-        .nav-link {
-            font-family: 'Kern Standard', 'Inter', sans-serif;
-            font-size: 11px;
-            font-weight: 400;
-            color: var(--primary-text);
-            text-decoration: none;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            transition: color 0.2s ease;
-        }
+.navbar-brand {
+    font-family: 'Protokoll', 'Inter', sans-serif;
+    font-size: 28px;
+    font-weight: 400;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--primary-text);
+    margin: 0;
+}
 
-        .nav-lets-talk {
-            font-family: 'Kern Standard', 'Inter', sans-serif;
-            font-size: 14px;
-            font-weight: 400;
-            color: var(--primary-text);
-            text-decoration: none;
-            padding: 8px 16px;
-            border: 1px solid var(--primary-text);
-            border-radius: 24px;
-            transition: all 0.3s ease;
-        }
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+}
 
-        .nav-lets-talk:hover {
-            background-color: var(--primary-text);
-            color: white;
-        }
+.nav-link {
+    font-family: 'Kern Standard', 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--primary-text);
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
 
-        .nav-link:hover,
-        .nav-link.active {
-            color: var(--accent-primary);
-        }
+.nav-link:hover {
+    color: var(--primary-text);
+    opacity: 0.7;
+}
+
+.nav-lets-talk {
+    font-family: 'Kern Standard', 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--primary-text);
+    text-decoration: none;
+    padding: 12px 32px;
+    border: 1px solid var(--primary-text);
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    text-transform: none;
+    letter-spacing: 0.5px;
+}
+
+.nav-lets-talk:hover {
+    background-color: var(--primary-text);
+    color: white;
+}
 
         /* Hero Section */
         .hero-section {
@@ -137,92 +157,88 @@
             text-align: left;
         }
 
-        .btn-primary {
-            font-family: 'Kern Standard', 'Inter', sans-serif;
-            font-size: 16px;
-            line-height: 25.2px;
-            letter-spacing: 0.9px;
-            background-color: var(--accent-primary);
-            color: var(--primary-text);
-            padding: 16px 32px;
-            border-radius: 50px;
-            border: 0px solid #000000;
-            text-decoration: none;
-            transition: all 0.2s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-        }
+       .btn-primary {
+    font-family: 'Kern Standard', 'Inter', sans-serif;
+    font-size: 18px;
+    background-color: var(--accent-primary);
+    color: var(--primary-text);
+    padding: 24px 48px;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    height: 78px;
+    min-width: 310px;
+    justify-content: center;
+}
 
-        .btn-primary svg {
-            transform: rotate(90deg);
-            transition: all 0.2s ease;
-        }
+.btn-primary:hover {
+    background-color: var(--accent-hover);
+    color: white;
+}
 
-        .btn-primary:hover {
-            background-color: var(--accent-hover);
-            color: white;
-        }
-
-        .btn-primary:hover svg path {
-            fill: white;
-        }
+.btn-primary:hover svg {
+    filter: invert(1);
+}
 
         /* Technical Impact Section */
-        .technical-impact-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 1.5rem;
-            margin: 3rem 0;
-        }
-
         .technical-impact-card {
-            background: var(--surface-primary);
-            border: 1px solid var(--border-color);
-            border-radius: 16px;
-            padding: 2rem 1.5rem;
-            text-align: left;
-            transition: all 0.3s ease;
-        }
+    background: var(--surface-primary);
+    border: 0.5px solid var(--border-color);
+    border-radius: 8px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    transition: all 0.3s ease;
+    min-height: 150px;
+}
 
-        .technical-impact-card:hover {
-            transform: translateY(-2px);
-        }
+.impact-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+}
 
-        .impact-image-placeholder {
-            width: 40px;
-            height: 40px;
-            background: var(--surface-secondary);
-            border: 2px dashed var(--border-color);
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 0 1rem 0;
-            font-size: 0.65rem;
-            color: var(--secondary-text);
-        }
+.impact-icon {
+    width: 24px;
+    height: 24px;
+    background: var(--surface-secondary);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    color: var(--secondary-text);
+    flex-shrink: 0;
+    margin-top: 2px;
+}
 
-        .impact-title {
-            font-family: 'Kern Standard', 'Inter', sans-serif;
-            font-size: 16px;
-            line-height: 22.4px;
-            letter-spacing: 0px;
-            font-weight: 600;
-            color: var(--primary-text);
-            margin-bottom: 0.5rem;
-            display: block;
-        }
+.impact-content {
+    flex: 1;
+}
 
-        .impact-desc {
-            font-family: 'Kern Standard', 'Inter', sans-serif;
-            font-size: 13px;
-            line-height: 20.4px;
-            letter-spacing: 0px;
-            font-weight: 400;
-            color: var(--secondary-text);
-        }
+.impact-title {
+    font-family: 'Kern Standard', 'Inter', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: #00332e;
+    margin-bottom: 0.5rem;
+}
 
+.impact-desc {
+    font-family: 'Kern Standard', 'Inter', sans-serif;
+    font-size: 14px;
+    color: #00332e;
+    line-height: 1.5;
+    opacity: 0.8;
+}
         /* Case Studies Section */
         .case-studies-section {
             background: var(--surface-dark);
@@ -610,24 +626,22 @@
 <body>
     <!-- Navigation -->
     <nav class="navbar">
-        <div class="max-w-7xl mx-auto px-6 py-4">
-            <div class="flex justify-between items-center">
-                <div class="navbar-brand">
-                    ARIANE LESNYAK
-                </div>
+    <div class="navbar-container">
+        <div class="navbar-brand">
+            ARIANE LESNYAK
+        </div>
+        
+        <div class="nav-menu">
+            <a href="#about" class="nav-link">About</a>
+            <a href="#technical-impact" class="nav-link">Technical Impact</a>
+            <a href="#partners" class="nav-link">Trusted By</a>
+            <a href="#case-studies" class="nav-link">Case Studies</a>
+            <a href="#experience" class="nav-link">Experience</a>
+            <a href="#languages" class="nav-link">Languages</a>
+            <a href="#contact" class="nav-lets-talk">Let's talk</a>
+        </div>
+    </div>
 
-                <!-- Desktop Menu -->
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="#about" class="nav-link">ABOUT</a>
-                    <a href="#technical-impact" class="nav-link">TECHNICAL IMPACT</a>
-                    <a href="#case-studies" class="nav-link">CASE STUDIES</a>
-                    <a href="#experience" class="nav-link">EXPERIENCE</a>
-                    <a href="#education" class="nav-link">EDUCATION</a>
-                    <a href="#languages" class="nav-link">LANGUAGES</a>
-                    <a href="#certifications" class="nav-link">CERTIFICATIONS</a>
-                    <a href="#partners" class="nav-link">TRUSTED BY</a>
-                    <a href="#contact" class="nav-lets-talk">LET'S TALK</a>
-                </div>
 
                 <!-- Mobile Menu -->
                 <div class="md:hidden nav-scroll-container flex items-center space-x-6 overflow-x-auto">
