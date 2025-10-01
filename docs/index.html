@@ -615,47 +615,22 @@ section.visible {
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="navbar">
-   <div class="max-w-7xl mx-auto px-6 py-4">
-            <div class="flex justify-between items-center">
-                <div class="navbar-brand">
-                    ARIANE LESNYAK
-                </div>
-
-        
-       <!-- Desktop Menu -->
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="#about" class="nav-link">ABOUT</a>
-                    <a href="#technical-impact" class="nav-link">TECHNICAL IMPACT</a>
-                        <a href="#partners" class="nav-link">TRUSTED BY</a>
-<a href="#case-studies" class="nav-link">CASE STUDIES</a>
-                    <a href="#experience" class="nav-link">EXPERIENCE</a>
-                    <a href="#education" class="nav-link">EDUCATION</a>
-                    <a href="#languages" class="nav-link">LANGUAGES</a>
-                    <a href="#certifications" class="nav-link">CERTIFICATIONS</a>
-                
-                    <a href="#contact" class="nav-lets-talk">LET'S TALK</a>
-                </div>
-
-    </div>
-
-
-                <!-- Mobile Menu -->
-                <div class="md:hidden nav-scroll-container flex items-center space-x-6 overflow-x-auto">
-                    <a href="#about" class="nav-link">ABOUT</a>
-                    <a href="#technical-impact" class="nav-link">TECHNICAL IMPACT</a>
-                    <a href="#contact" class="nav-lets-talk">LET'S TALK</a>
-                    <a href="#case-studies" class="nav-link">CASE STUDIES</a>
-                    <a href="#experience" class="nav-link">EXPERIENCE</a>
-                    <a href="#education" class="nav-link">EDUCATION</a>
-                    <a href="#languages" class="nav-link">LANGUAGES</a>
-                    <a href="#certifications" class="nav-link">CERTIFICATIONS</a>
-                    <a href="#partners" class="nav-link">TRUSTED BY</a>
-                   
-                </div>
-            </div>
-        </div>
+   <header>
+    <div class="logo">ARIANE LESNYAK</div>
+    <nav>
+        <ul>
+            <li><a href="#about">ABOUT</a></li>
+            <li><a href="#technical-impact">TECHNICAL IMPACT</a></li>
+            <li><a href="#trusted-by">TRUSTED BY</a></li>
+            <li><a href="#case-studies">CASE STUDIES</a></li>
+            <li><a href="#experience">EXPERIENCE</a></li>
+            <li><a href="#education">EDUCATION</a></li>
+            <li><a href="#languages">LANGUAGES</a></li>
+            <li><a href="#certifications">CERTIFICATIONS</a></li>
+            <li><a href="#lets-talk">LET'S TALK</a></li>
+        </ul>
     </nav>
+</header>
 
     <!-- Hero Section -->
     <section class="hero-section min-h-screen flex items-center bg-white">
@@ -1318,24 +1293,28 @@ section.visible {
                 });
             });
 
-            // Fade-in animation on scroll
-            const observerOptions = {
-                threshold: 0.1,
-                rootMargin: '0px 0px -50px 0px'
-            };
+           // sMOOTH ON MOBILE
+const sections = document.querySelectorAll('section');
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+        }
+    });
+}, { threshold: 0.1 });
+sections.forEach(section => observer.observe(section));
 
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                    }
-                });
-            }, observerOptions);
-
-            document.querySelectorAll('.fade-in-section').forEach(section => {
-                observer.observe(section);
-            });
-        });
+const nav = document.querySelector('nav ul');
+const navBefore = document.querySelector('nav::before');
+const navAfter = document.querySelector('nav::after');
+if (navBefore && navAfter) {
+    navBefore.addEventListener('click', () => {
+        nav.scrollBy({ left: -100, behavior: 'smooth' });
+    });
+    navAfter.addEventListener('click', () => {
+        nav.scrollBy({ left: 100, behavior: 'smooth' });
+    });
+}
     </script>
 </body>
 </html>
